@@ -14,7 +14,8 @@ dotenv.config();
 const app = express();
 
 const corsOptions = {
-	origin: '*',
+  origin: true,
+  methods: ["POST", "OPTIONS"],
 	optionsSuccessStatus: 200
 };
 
