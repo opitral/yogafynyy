@@ -18,11 +18,12 @@ jobs:
       - name: Install npm dependencies
         run: |
           cd backend
-          npm i -ci
+          npm i 
 
       - name: Run service
         run: |
           cd backend
+          echo "{{ secrets.BACKEND_ENV }}" > .env
           pm2 restart backend
 
   bot:
@@ -34,11 +35,12 @@ jobs:
       - name: Install npm dependencies
         run: |
           cd bot
-          npm i -ci
+          npm i 
 
       - name: Run service
         run: |
           cd bot
+          echo "{{ secrets.BOT_ENV }}" > .env
           pm2 restart bot
 
   frontend:
@@ -50,12 +52,12 @@ jobs:
       - name: Install npm dependencies
         run: |
           cd frontend
-          npm i -ci
+          npm i 
 
       - name: Run build task
         run: |
           cd frontend
-          npm run build --if-present
+          npm run build 
 
       - name: Run service
         run: |
