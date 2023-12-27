@@ -23,7 +23,7 @@ jobs:
       - name: Run service
         run: |
           cd ./backend
-          echo "${{ secrets.BACKEND_ENV }}" > .env
+          echo "${{ secrets.BACKEND_ENV }}" > ./.env
           pm2 restart --update-env backend
 
   bot:
@@ -40,7 +40,7 @@ jobs:
       - name: Run service
         run: |
           cd ./bot
-          echo "${{ secrets.BOT_ENV }}" > .env
+          echo "${{ secrets.BOT_ENV }}" > ./.env
           pm2 restart --update-env bot
 
   frontend:
