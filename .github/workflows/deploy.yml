@@ -23,7 +23,7 @@ jobs:
       - name: Run service
         run: |
           cd backend
-          pm2 restart index.js --name backend
+          pm2 restart backend
 
   bot:
     runs-on: self-hosted
@@ -36,10 +36,10 @@ jobs:
           cd bot
           npm i -ci
 
-      # - name: Run service
-      #   run: |
-      #     cd bot
-      #     pm2 restart index.js --name bot
+      - name: Run service
+        run: |
+          cd bot
+          pm2 restart bot
 
   frontend:
     runs-on: self-hosted
@@ -60,4 +60,4 @@ jobs:
       - name: Run service
         run: |
           cd frontend
-          pm2 restart "npm run preview" --name frontend
+          pm2 restart frontend
