@@ -56,11 +56,13 @@
 
         if (error) { 
             if (error.type) {
-                error.msg = "Помилка. Спробуйте пізніше"
+                error.cnt = {
+                    error: "Помилка. Спробуйте пізніше"
+                }
             }
 
             return alertError.show({
-                text: error.msg,
+                text: error.cnt.error,
                 time: 3000,
             });
         }

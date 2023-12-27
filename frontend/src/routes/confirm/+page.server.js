@@ -14,7 +14,7 @@ export const actions = {
 
         return {
             message: data?.message,
-            error: error?.msg
+            error: error?.cnt
         }
     }
 };
