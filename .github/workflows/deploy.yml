@@ -15,51 +15,39 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Install npm dependencies
+      - name: Install backend dependencies
         run: |
           cd ./backend
           npm i 
 
-      - name: Run service
+      - name: Install bot dependencies
+        run: |
+          cd ./bot
+          npm i 
+
+      - name: Install front dependencies
+        run: |
+          cd ./frontend
+          npm i 
+
+      - name: Run frontend build task
+        run: |
+          cd ./frontend
+          npm run build 
+
+      - name: Run backend service
         run: |
           cd ./backend
           echo "${{ secrets.BACKEND_ENV }}" > ./.env
           pm2 restart --update-env backend
 
-  bot:
-    runs-on: self-hosted
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-
-      - name: Install npm dependencies
-        run: |
-          cd ./bot
-          npm i 
-
-      - name: Run service
+      - name: Run bot service
         run: |
           cd ./bot
           echo "${{ secrets.BOT_ENV }}" > ./.env
           pm2 restart --update-env bot
 
-  frontend:
-    runs-on: self-hosted
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-
-      - name: Install npm dependencies
-        run: |
-          cd ./frontend
-          npm i 
-
-      - name: Run build task
-        run: |
-          cd ./frontend
-          npm run build 
-
-      - name: Run service
+      - name: Run frontend service
         run: |
           cd ./frontend
           pm2 restart frontend
