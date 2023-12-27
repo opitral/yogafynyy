@@ -1,0 +1,63 @@
+name: Deploy 
+
+on: 
+  push:
+    branches:
+    - main
+  workflow_dispatch: 
+
+
+jobs:
+
+  backend:
+    runs-on: self-hosted
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Install npm dependencies
+        run: |
+          cd backend
+          npm i -ci
+
+      - name: Run service
+        run: |
+          cd backend
+          pm2 restart index.js --name backend
+
+  bot:
+    runs-on: self-hosted
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Install npm dependencies
+        run: |
+          cd bot
+          npm i -ci
+
+      # - name: Run service
+      #   run: |
+      #     cd bot
+      #     pm2 restart index.js --name bot
+
+  frontend:
+    runs-on: self-hosted
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Install npm dependencies
+        run: |
+          cd frontend
+          npm i -ci
+
+      - name: Run build task
+        run: |
+          cd frontend
+          npm run build --if-present
+
+      - name: Run service
+        run: |
+          cd frontend
+          pm2 restart "npm run preview" --name frontend
