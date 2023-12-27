@@ -14,7 +14,7 @@ dotenv.config();
 const app = express();
 
 const corsOptions = {
-	origin: 'https://yogafaynyy.com',
+	origin: '*',
 	optionsSuccessStatus: 200
 };
 
