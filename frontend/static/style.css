@@ -1,0 +1,222 @@
+:root {
+    --brand: #C5E812;
+    --brand90: rgba(196, 232, 18, .90);
+    --brand80: rgba(196, 232, 18, .80);
+    --brand70: rgba(196, 232, 18, .70);
+    --brand60: rgba(196, 232, 18, .60);
+    --brand50: rgba(196, 232, 18, .50);
+    --brand40: rgba(196, 232, 18, .40);
+    --brand30: rgba(196, 232, 18, .30);
+    --brand20: rgba(196, 232, 18, .20);
+    --brand10: rgba(196, 232, 18, .10);
+
+    --black: #222222 !important;
+
+    --font-main: 'Montserrat', sans-serif !important;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* ===== Scrollbar CSS ===== */
+/* Firefox */
+* {
+    scrollbar-width: auto;
+    scrollbar-color: var(--brand) var(--black);
+}
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+}
+
+*::-webkit-scrollbar-track {
+    background: var(--black);
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: var(--brand);
+}
+/* ========================= */
+
+::-webkit-inner-spin-button,
+::-webkit-outer-spin-button {
+    display: none;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+
+    overflow: hidden; /* for aos */
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: var(--black);
+    color: #ddd;
+    font-weight: 500;
+    overflow-x: hidden;
+}
+
+/* header, footer, section {
+    overflow: hidden;
+} */
+
+li {
+    margin-bottom: 10px;
+    list-style: inside;
+}
+
+
+.title {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    text-align: center;
+}
+.subtitle {
+    font-size: 18px;
+    font-weight: 500;
+    text-align: center;
+    max-width: 840px;
+}
+
+@media (max-width: 768px) {
+    .title {
+        font-size: 28px;
+    }
+    .subtitle {
+        font-size: 14px;
+    }
+
+}
+
+/* btn start */
+
+.btn {
+    /* background: #000; */
+    color: var(--brand);
+    border: 1px solid var(--brand);
+    padding: 15px 50px;
+    display: block;
+    width: fit-content;
+    position: relative;
+    overflow: hidden;
+    background: transparent;
+    transition: all 200ms;
+}
+
+.btn::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: -30px;
+    width: 20px;
+    height: 100%;
+    background: white;
+    transform: skewX(-20deg);
+    animation: ligth 5s linear infinite;
+    animation-delay: 2s;
+}
+
+.btn:hover {
+    /* box-shadow: 3px 3px 0 #fff; */
+    background: var(--brand);
+    color: var(--black);
+}
+.btn img {
+    transition: all 200ms;
+}
+.btn:hover img {
+    filter: brightness(0.2);
+}
+
+@keyframes ligth {
+    0%   { left: -30px }
+    10%  { left: calc(100% + 30px) }
+    100% { left: calc(100% + 30px)  }
+}
+
+/* btn end */
+
+.cir, .cir2 {
+    position: relative;
+}
+.cir::after, .cir2::before {
+    --pos: 200px;
+
+    content: '';
+    position: absolute;
+    height: 900px;
+    aspect-ratio: 1;
+    background-image: url(/img/blur.png);
+    background-position: center;
+    background-size: 190%;
+    background-repeat: no-repeat;
+    z-index: -1;
+    opacity: 0.5;
+}
+/* .cir-tl::after, .cir2-tl::before { top:    var(--pos); left:  var(--pos); }
+.cir-tr::after, .cir2-tr::before { top:    var(--pos); right: var(--pos); }
+.cir-bl::after, .cir2-bl::before { bottom: var(--pos); left:  var(--pos); }
+.cir-br::after, .cir2-br::before { bottom: var(--pos); right: var(--pos); } */
+
+.cir-tl::after, .cir2-tl::before {
+    top: 0; left: 0; 
+    transform: translate(calc(var(--pos) * -1), calc(var(--pos) * -1));
+}
+.cir-tr::after, .cir2-tr::before {
+    top: 0; right: 0; 
+    transform: translate(var(--pos), calc(var(--pos) * -1));
+}
+.cir-bl::after, .cir2-bl::before {
+    bottom: 0; left: 0; 
+    transform: translate(calc(var(--pos) * -1), var(--pos));
+}
+.cir-br::after, .cir2-br::before {
+    bottom: 0; right: 0; 
+    transform: translate(var(--pos), var(--pos));
+}
+
+@media (max-width: 768px) {
+    .cir::after, .cir2::after {
+        --pos: 30%;
+        width: 100%;
+        height: auto;
+        opacity: 0.3;
+        background-size: 200%;
+    }
+
+    .cir-tl::after, .cir2-tl::before {
+        top: 0; left: 0; 
+        transform: translate(0,0);
+        background-position-x: 100%;
+    }
+    .cir-tr::after, .cir2-tr::before {
+        top: 0; right: 0; 
+        transform: translate(0,0);
+        background-position-x: 0%;
+    }
+    .cir-bl::after, .cir2-bl::before {
+        bottom: 0; left: 0; 
+        transform: translate(0,0);
+        background-position-x: 100%;
+    }
+    .cir-br::after, .cir2-br::before {
+        bottom: 0; right: 0; 
+        transform: translate(0,0);
+        background-position-x: 0%;
+    }
+    
+}
+
+/* header, footer, section {
+    overflow-x: hidden;
+} */
