@@ -17,14 +17,14 @@ jobs:
 
       - name: Install npm dependencies
         run: |
-          cd backend
+          cd ./backend
           npm i 
 
       - name: Run service
         run: |
-          cd backend
+          cd ./backend
           echo "{{ secrets.BACKEND_ENV }}" > .env
-          pm2 restart backend
+          pm2 restart --update-env backend
 
   bot:
     runs-on: self-hosted
@@ -34,14 +34,14 @@ jobs:
 
       - name: Install npm dependencies
         run: |
-          cd bot
+          cd ./bot
           npm i 
 
       - name: Run service
         run: |
-          cd bot
+          cd ./bot
           echo "{{ secrets.BOT_ENV }}" > .env
-          pm2 restart bot
+          pm2 restart --update-env bot
 
   frontend:
     runs-on: self-hosted
@@ -51,15 +51,15 @@ jobs:
 
       - name: Install npm dependencies
         run: |
-          cd frontend
+          cd ./frontend
           npm i 
 
       - name: Run build task
         run: |
-          cd frontend
+          cd ./frontend
           npm run build 
 
       - name: Run service
         run: |
-          cd frontend
+          cd ./frontend
           pm2 restart frontend
