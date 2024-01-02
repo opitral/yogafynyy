@@ -72,7 +72,6 @@ class CourseController {
           process.env.COURSE_PRICE *
           ((100 - process.env.COURSE_DISCOUNT) / 100),
         response_url: `${process.env.LENDING_URL}confirm`,
-        // response_url: `https://qr7j73q7-5173.euw.devtunnels.ms/confirm`,
       });
 
       return res.json({
@@ -88,6 +87,8 @@ class CourseController {
 
   async confirmPayment(req, res) {
     try {
+      console.log(req.body.order_id);
+      console.log("test");
       const token = nanoid(6);
 
       const user = await UserModel.findOneAndUpdate(
