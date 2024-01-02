@@ -9,7 +9,7 @@ export async function GET() {
 
     try {
         aaa = await fetch(url)
-        aaa = aaa.json()
+        aaa = await aaa.json()
     } catch (error) {
         aaa = error + ""
     }
