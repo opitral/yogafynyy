@@ -87,8 +87,6 @@ class CourseController {
 
   async confirmPayment(req, res) {
     try {
-      console.log(req.body.order_id);
-      console.log("test");
       const token = nanoid(6);
 
       const user = await UserModel.findOneAndUpdate(
@@ -108,15 +106,15 @@ class CourseController {
         });
       }
 
-      // await transporter.sendMail({
-      //   from: {
-      //     name: "YogaFaynyy",
-      //     address: process.env.SMTP_USER,
-      //   },
-      //   to: user.email,
-      //   subject: "Дякуємо за придбання курсу",
-      //   html: getEmailHtml(token),
-      // });
+      await transporter.sendMail({
+        from: {
+          name: "YogaFaynyy",
+          address: process.env.SMTP_USER,
+        },
+        to: user.email,
+        subject: "Дякуємо за придбання курсу",
+        html: getEmailHtml(token),
+      });
 
       return res.json({
         message: `${process.env.TELEGRAM_BOT_LINK}?start=${token}`,
