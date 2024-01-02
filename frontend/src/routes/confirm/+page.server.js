@@ -12,6 +12,8 @@ export const actions = {
             }
         })
 
+        console.log(data, error);
+
         return {
             message: data?.message,
             error: error?.cnt
