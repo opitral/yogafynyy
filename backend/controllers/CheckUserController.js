@@ -2,7 +2,7 @@ import { validationResult } from "express-validator";
 
 import UserModel from "../models/UserModel.js";
 
-class GetLinkController {
+class CheckUserController {
   async checkUser(req, res) {
     try {
       const errors = validationResult(req);
@@ -40,4 +40,4 @@ class GetLinkController {
   }
 }
 
-export default new GetLinkController();
+export default new CheckUserController();
