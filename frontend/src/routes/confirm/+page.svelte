@@ -7,6 +7,8 @@
 
     form ||= {}
 
+    console.log(form)
+
     const support = "https://t.me/yoga-support"
 
     const statusContent = {
