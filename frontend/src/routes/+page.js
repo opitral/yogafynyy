@@ -5,9 +5,9 @@ export async function load() {
 
 
     const { data, error } = await api.get.json("course", { timeout: 2000 })
-
+    console.log(data);
     
-    if (error && error.type.startsWith("rapi.")) {
+    if (error && error.type) {
         return {
             error: true,
             message: "Ви а автономному режимі"

@@ -1,0 +1,53 @@
+name: Deploy 
+
+on: 
+  push:
+    branches:
+    - main
+  workflow_dispatch: 
+
+
+jobs:
+
+  deploy:
+    runs-on: self-hosted
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Install backend dependencies
+        run: |
+          cd ./backend
+          npm i 
+
+      - name: Install bot dependencies
+        run: |
+          cd ./bot
+          npm i 
+
+      - name: Install front dependencies
+        run: |
+          cd ./frontend
+          npm i 
+
+      - name: Run frontend build task
+        run: |
+          cd ./frontend
+          npm run build 
+
+      - name: Run backend service
+        run: |
+          cd ./backend
+          echo "${{ secrets.BACKEND_ENV }}" > ./.env
+          pm2 restart --update-env backend
+
+      - name: Run bot service
+        run: |
+          cd ./bot
+          echo "${{ secrets.BOT_ENV }}" > ./.env
+          pm2 restart --update-env bot
+
+      - name: Run frontend service
+        run: |
+          cd ./frontend
+          pm2 restart frontend
