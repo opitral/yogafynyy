@@ -45,8 +45,6 @@ class CourseController {
     try {
       const errors = validationResult(req);
 
-      console.log(errors);
-
       if (!errors.isEmpty()) {
         return res.status(400).json({
           error: errors.array()[0].msg,
