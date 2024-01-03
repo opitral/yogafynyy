@@ -53,12 +53,12 @@ export async function GET() {
     return json({
         tests: {
             rapi: {
-                local: await test1(),
-                domen: await test2()
+                local: await test2(),
+                domen: await test1(),
             },
             fetch: {
-                local: await test3(),
-                domen: await test4()
+                domen: await test3(),
+                local: await test4(),
             }
         }
     });
