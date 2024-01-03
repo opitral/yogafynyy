@@ -16,13 +16,10 @@ const fondy = new CloudIpsp({
 });
 
 const transporter = nodemailer.createTransport({
-  service: process.env.SMTP_SERVICE,
+  host: process.env.SMTP_HOST,
   auth: {
-    host: process.env.SMTP_HOST,
-    port: process.env.SMTP_PORT,
     user: process.env.SMTP_USER,
     pass: process.env.SMTP_PASS,
-    secure: true,
   },
 });
 
@@ -106,15 +103,15 @@ class CourseController {
         });
       }
 
-      // await transporter.sendMail({
-      //   from: {
-      //     name: "YogaFaynyy",
-      //     address: process.env.SMTP_USER,
-      //   },
-      //   to: user.email,
-      //   subject: "Дякуємо за придбання курсу",
-      //   html: getEmailHtml(token),
-      // });
+      await transporter.sendMail({
+        from: {
+          name: "YogaFaynyy",
+          address: process.env.SMTP_USER,
+        },
+        to: user.email,
+        subject: "Дякуємо за придбання курсу",
+        html: getEmailHtml(token),
+      });
 
       return res.json({
         message: `${process.env.TELEGRAM_BOT_LINK}?start=${token}`,
