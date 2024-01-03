@@ -6,7 +6,7 @@ export const actions = {
     default: async ({ request }) => {
         const body = await request.formData()
 
-        const { error, data } = await api.post.json("course/buy/confirm", {
+        const { error, data } = await api.post.json("http://127.0.0.1:4000/api/v1/course/buy/confirm", {
             body: {
                 order_id: body.get("order_id")
             }
