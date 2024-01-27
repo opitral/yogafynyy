@@ -1,11 +1,13 @@
 import { api } from '$lib/js/api.js'
 
+let counter = 0
+
 /** @type {import('./$types').PageLoad} */
 export async function load() {
+    console.log(`Cайт відвідали: ${counter++} разів`);
 
 
     const { data, error } = await api.get.json("course", { timeout: 2000 })
-    console.log(data);
     
     if (error && error.type) {
         return {

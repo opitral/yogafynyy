@@ -1,6 +1,6 @@
 <script>
     export let
-        text = "Записатися на курс", 
+        text = "ОТРИМАТИ ДОСТУП", 
         href = "#buy",
         icon = "",
         cls = ""
