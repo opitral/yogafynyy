@@ -13,10 +13,12 @@ class CheckUserController {
         });
       }
 
-      await UserModel.findOneAndUpdate(
-        { botToken: req.body.token },
-        { $set: { botToken: "", telegramId: req.body.user } }
-      );
+      if (req.body.token !== "") {
+        await UserModel.findOneAndUpdate(
+            { botToken: req.body.token },
+            { $set: { botToken: "", telegramId: req.body.user } }
+        );
+      }
 
       const user = await UserModel.findOne({
         telegramId: req.body.user,
