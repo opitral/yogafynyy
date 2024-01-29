@@ -4,7 +4,7 @@
     import { onMount    } from "svelte";
     import { fade, fly  } from "svelte/transition";
     import { alertError } from "$lib/js/tst-variants.js";
-    import { browserApi } from "$lib/js/api.js";
+    import { api        } from "$lib/js/api.js";
 
 
     export let price = 0, discount = 0, new_price = 0;
@@ -45,7 +45,7 @@
 
         disabled = true
 
-        const { data, error } = await browserApi.post.json("course/buy", {
+        const { data, error } = await api.post.json("course/buy", {
             body: {
                 email: $store.email,
                 phone: mask_phone.unmaskedvalue(),

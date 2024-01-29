@@ -67,14 +67,18 @@ body {
     overflow: hidden;
 } */
 
+ul {
+    margin-left: 20px;
+}
+
 li {
     margin-bottom: 10px;
-    list-style: inside;
+    /* list-style: inside; */
 }
 
 
 .title {
-    font-size: 36px;
+    font-size: 30px;
     font-weight: 700;
     margin-bottom: 20px;
     text-transform: uppercase;

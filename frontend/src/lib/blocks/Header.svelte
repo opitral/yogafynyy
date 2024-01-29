@@ -25,9 +25,17 @@
 
         <div class="md:grow " flex="20 md:50 lg:100 space m-md:col">
             <div class="mt--40 md:mt--100 m-md:order-1" flex="30 col m-md:center" >
-                <h1 text="54 md:64 900 nowrap">Yoga Rutm</h1>
-                <p text="18 " class="op-50 m-md:ta-center">
-                    Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore
+                <h1 text="36 md:48 900 nowrap">
+                    YOGA <span text="$brand">HATA</span>
+                </h1>
+                <p text="16" class="op-50 m-md:ta-center">
+                    Онлайн-платформа безпечної , простої та ефективної йоги в стилі FYSM від сертифікованого тренера Сержа Файного
+                    <br>
+                    <br>
+                    Розкрий свій внутрішній потенціал та силу через Йогу та назавжди позбудься тривоги, стресу, болю та затисків в тілі
+                    <br>
+                    <br>
+                    Більше 20 унікальних практик йоги, аудіо-медитацій та дихальних практик
                 </p>
                 <Btn />
             </div>
