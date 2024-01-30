@@ -2,25 +2,31 @@
 	import Btn from '$lib/ui/Btn.svelte';
 
     const list = [
-        "sed eiusmod tempor incidunt ut labore",
-        "sed eiusmod tempor incidunt ut labore",
-        "sed eiusmod tempor incidunt ut labore",
-        "sed eiusmod tempor incidunt ut labore",
-        "sed eiusmod tempor incidunt ut labore",
-        "sed eiusmod tempor incidunt ut labore",
+        "Методологія опирається на 3 постулати: безпечність, ефективність, простота. При цьому збережена уся аутентичність передана в йогічних писаннях",
+
+        "назавжди позбавить вас болей в спині, гриж та протрузії всього за 40 хвилин практики на килимку",
+
+        "це про дисципліну, чесніть та результат. Алгоритми (послідовність вправ) покривають усі ключові запити і потреби сучасної людини яка хоче отримати від йоги “усе і одразу“",
+
+        "у методології відсутні травмонебезпечні асани які є у класичній йозі. Кожна звʼязка асан це “КОД” яким ви через власне тіло пишете магічну реальність",
+
+        "Незалежно від віку та обставин. Старий, немічний чи молодий. Неважливий початковий стан, гендер та вік. Той хто регулярно практикує йогу неодмінно досягне успіху ",
     ]
 </script>
 
 <section flex="col" class="cir cir-tl mt-50">
     <div class="container" flex="col center">
-        <h2 class="title" data-aos="fade-down">FYSM йога - що це</h2>
+        <h2 class="title" data-aos="fade-down">
+            ПРО FYSM ЙОГУ
+        </h2>
         <p class="subtitle" data-aos="fade-down">
-            Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore
+            FYSM - Fresh Yoga Synthesized Methodology <br>
+            Сучасна синтезована методологія, що поєднала в собі найкраще з відомого у світі йоги
         </p>
 
-        <div class="mt-20 md:>:w-half" flex="20 md:100 m-md:col space">
+        <div class="mt-20" flex="20 md:100 m-md:col space">
 
-            <img src="/img/video.png" alt="" data-aos="fade-right">
+            <img class="md:w-40%" src="/img/video.png" alt="" data-aos="fade-right">
 
             <div class="" flex="30 col">
                 <h5 data-aos="fade-up" data-aos-delay="100">Обретите здоровое и гибкое тело на всю жизнь</h5>
@@ -28,7 +34,12 @@
 
                 <ul>
                     {#each list as item, index}
-                        <li data-aos="fade-up" data-aos-delay="{(index * 100)}">{item}</li>
+                        <li
+                            text="14 400"
+                            class="mb-15"
+                            data-aos="fade-up"
+                            data-aos-delay="{(index * 100)}"
+                        >{item}</li>
                     {/each}
                 </ul>
 

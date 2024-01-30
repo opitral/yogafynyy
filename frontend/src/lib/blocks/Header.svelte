@@ -15,7 +15,11 @@
     <div class="container grow" flex="col">
 
         <div flex="jc-c md:space" class="py-30">
-            <h4 text="$brand">LogoYoga</h4>
+
+            <!-- <h4 text="$brand">LogoYoga</h4> -->
+
+            <img class="h-60" src="/logo.svg" alt="logo">
+
             <nav class="m-md:hide" flex="50">
                 {#each links as {href, text}}
                     <a text="h:$brand" {href}>{text}</a>
@@ -28,7 +32,7 @@
                 <h1 text="36 md:48 900 nowrap">
                     YOGA <span text="$brand">HATA</span>
                 </h1>
-                <p text="16" class="op-50 m-md:ta-center">
+                <p text="14 md:16" class="op-50 m-md:ta-center">
                     Онлайн-платформа безпечної , простої та ефективної йоги в стилі FYSM від сертифікованого тренера Сержа Файного
                     <br>
                     <br>

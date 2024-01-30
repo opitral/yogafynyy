@@ -67,7 +67,9 @@
             });
         }
 
-        open(data.message);        
+        // open(data.message); 
+        
+        location.href = data.message
     }    
         
 </script>

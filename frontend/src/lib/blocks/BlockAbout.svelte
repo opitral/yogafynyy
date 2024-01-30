@@ -47,7 +47,7 @@
                     Відчуй результат після першої практики або ми повернемо кошти!
                 </p>
 
-                <div data-aos="zoom-in">
+                <div data-aos="zoom-in" class="mb-10">
                     <Btn />
                 </div>
             </div>

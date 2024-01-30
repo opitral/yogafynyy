@@ -1,23 +1,30 @@
 <script>
     const content = [
-        "Lorem ipsum dolor sit amet, consectetur",
-        "Lorem ipsum dolor sit amet, consectetur",
-        "Lorem ipsum dolor sit amet, consectetur",
-        "Lorem ipsum dolor sit amet, consectetur",
-        "Lorem ipsum dolor sit amet, consectetur",
-        "Lorem ipsum dolor sit amet, consectetur",
+        "Відчуєш баланс, легкість, гнучкість, контроль над розумом та свободу в тілі",
+
+        "Покращення постави, міцна та пряма спина, рельєфний прес <br> Відновлення енергії та сили <br> Поліпшення роботи гормональної системи",
+
+        "Забудеш про болі у спині, попереку, шиї та суглобах <br> Сформуєш потужній мʼязовий корсет та опорно-руховий апарат",
+
+        "Позбудешся стресу, депресії, тривожних станів та некерованих емоцій ",
+
+        "Корекція фігури та схуднення <br> Звільнення від набряків у тілі <br> Стрункий та підтягнутий живіт",
+
+        "Назавжди позбудешся ментальних блоків та відчуєш любов до себе та свого тіла <br> Визначиш свої цілі та цінності",
     ]
 </script>
 
 <section class="bg-#292929 mt-50">
     <div class="container py-50" flex="20 md:50 col center">
-        <h2 class="title m-md:ta-center" data-aos="fade-down">Цей курс вам допоможе</h2>
+        <h2 class="title m-md:ta-center" data-aos="fade-down">
+            Результати занять на платформі
+        </h2>
 
-        <div grid="30 cols-2 md:cols-3">
+        <div grid="30 cols-2 md:cols-3 ai-s">
             {#each content as item, index}
                 <div class="max-w-300" flex="20 col center" data-aos="fade-up" data-aos-delay="{index * 100}">
                     <img src="/icon/check.svg" alt="">
-                    <p text="center" class="op-50">{item}</p>
+                    <p text="16 400 center" class="op-50">{@html item}</p>
                 </div>
             {/each}
         </div>
