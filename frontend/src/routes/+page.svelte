@@ -37,9 +37,9 @@
 <BlockHelpIF   />
 <BlockPlatform />
 <BlockForWho   />
-<BlockResults  />
+<!-- <BlockResults  /> -->
 <BlockReviews  />
-<BlockClients  />
+<!-- <BlockClients  /> -->
 <BlockInclude  />
 <BlockFaq      />
 

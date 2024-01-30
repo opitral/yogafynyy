@@ -63,7 +63,7 @@
                 <Btn />
             </div>
 
-            <img class="m-md:order--1 md:w-50%" src="/img/lotus.png" alt="" data-aos="fade-left">
+            <img class="m-md:order--1 md:w-50%" src="/img/lotus2.png" alt="" data-aos="fade-left">
 
         </div>
     </div>

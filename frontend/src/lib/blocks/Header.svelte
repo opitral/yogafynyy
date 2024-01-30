@@ -44,7 +44,7 @@
                 <Btn />
             </div>
 
-            <img class="max-w-450 lg:max-w-550 w-80% md:w-full" src="/img/hero.png" alt="">
+            <img class="max-w-450 lg:max-w-550 w-80% md:w-full" src="/img/hero2.png" alt="">
         </div>
     </div>
 </header>

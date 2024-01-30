@@ -30,7 +30,7 @@
         </h2>
 
         <p class="subtitle" text="up" data-aos="fade-down" data-aos-delay="100">
-            ВІдгуки клієнтів
+            Відгуки задоволених клієнтів та практиків
         </p>
 
         <div flex="30 m-md:col" class="mt-30">

@@ -29,11 +29,25 @@
 </script>
 
 <section class="bg-#292929 mt-50">
-    <div class="container py-50" flex="50 col center m-md:ai-s">
-        <h2 class="title" data-aos="fade-down">Для кого підходить курс</h2>
+    <div class="container py-50" flex="40 col center m-md:ai-s">
+        <h2 class="title" data-aos="fade-down">
+            Для кого підходить платформа
+        </h2>
 
-        <div flex="50 m-md:col" class=" m-md:w-full">
-            {#each content as [title, list], index}
+        <p text="500" class="op-50">ДЛЯ УСІХ В КОГО Є ХРЕБЕТ</p>
+
+        <div flex="12 col center" class=" m-md:w-full">
+            <p text="18 up *:center" flex="15 col">
+                <span>ІДЕАЛЬНИЙ СТАРТ ДЛЯ НОВАЧКІВ ЯКІ ШУКАЮТЬ З ЧОГО ПОЧАТИ СВІЙ ШЛЯХ В ЙОГУ</span>
+                <span>ПОГЛИБЛЕННЯ У НОВЕ ТА РОЗШИРЕННЯ БАЗИ ЗНАНЬ</span>
+                <span>ДЛЯ ДОСВІДЧЕНИХ ПРАКТИКІВ</span>
+            </p>
+            <!-- <p text="24 up">
+               
+            </p> -->
+                
+                 
+            <!-- {#each content as [title, list], index}
                 <div class="md:max-w-300" flex="10 col center" data-aos="fade-up" data-aos-delay="{index * 100}">
                     <p text="20 md:18 bold" class="md:p-15+30 m-md:w-full">
                         {title}
@@ -45,7 +59,7 @@
                         {/each}
                     </ul>
                 </div>
-            {/each}
+            {/each} -->
         </div>
 
         <div data-aos="fade-down">

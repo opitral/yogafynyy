@@ -22,7 +22,7 @@
 
         <div class="mt-20 md:>:w-half" flex="20 md:100 m-md:col space">
 
-            <img class="m-md:w-80%" src="/img/spider.png" alt="" data-aos="fade-right">
+            <img class="m-md:w-80%" src="/img/spider2.png" alt="" data-aos="fade-right">
 
             <div class="" flex="30 col">
                 <h5 data-aos="fade-up" data-aos-delay="200">
