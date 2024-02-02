@@ -65,7 +65,7 @@
     }
 </script>
 
-<section class="bg-#292929 mt-50">
+<section class="bg-#292929 mt-50" id="faq">
     <div class="container py-50" flex="50 col center">
         <h2 class="title" data-aos="fade-down">Виникли питання?</h2>
 

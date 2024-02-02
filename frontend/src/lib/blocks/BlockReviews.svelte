@@ -89,7 +89,7 @@
 </script>
 
 
-<section flex="col" class="cir cir-tr mt-50 mb-100">
+<section flex="col" class="cir cir-tr mt-50 mb-100" id="reviews">
     <div class="container" flex="col center">
         <h2 class="title" data-aos="fade-down">
             Чому варто довіритися

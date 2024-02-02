@@ -2,7 +2,7 @@
 	import Btn from '$lib/ui/Btn.svelte';
 </script>
 
-<section flex="col" class="cir cir-tr mt-50">
+<section flex="col" class="cir cir-tr mt-50" id="platform">
     <div class="container" flex="col center">
         <h2 class="title" data-aos="fade-down">про платформу</h2>
         <!-- <p class="subtitle">

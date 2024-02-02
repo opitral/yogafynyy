@@ -2,11 +2,11 @@
 	import Btn from '$lib/ui/Btn.svelte';
 
     const links = [
-        { href: "#/", text: "Lorem link" },
-        { href: "#/", text: "Lorem link" },
-        { href: "#/", text: "Lorem link" },
-        { href: "#/", text: "Lorem link" },
-        { href: "#/", text: "Lorem link" },
+        { href: "#teacher",  text: "Тічер" },
+        { href: "#fysm",     text: "FYSM" },
+        { href: "#platform", text: "Платформа" },
+        { href: "#reviews",  text: "Відгуки" },
+        { href: "#faq",      text: "Питання" },
     ]
 
 </script>

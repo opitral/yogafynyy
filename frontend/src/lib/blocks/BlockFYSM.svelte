@@ -14,7 +14,7 @@
     ]
 </script>
 
-<section flex="col" class="cir cir-tl mt-50">
+<section flex="col" class="cir cir-tl mt-50" id="fysm">
     <div class="container" flex="col center">
         <h2 class="title" data-aos="fade-down">
             ПРО FYSM ЙОГУ

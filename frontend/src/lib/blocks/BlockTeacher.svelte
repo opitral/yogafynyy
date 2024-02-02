@@ -16,7 +16,7 @@
     ]
 </script>
 
-<section flex="col" class="cir cir-br mt-50">
+<section flex="col" class="cir cir-br mt-50" id="teacher">
     <div class="container" flex="md:30 col center">
         <h2 class="title" data-aos="fade-down">
             ПРО ТІЧЕРА
