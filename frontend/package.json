@@ -20,7 +20,10 @@
   },
   "type": "module",
   "dependencies": {
-    "inputmask": "^5.0.8"
+    "@splidejs/svelte-splide": "^0.2.9",
+    "@types/swiper": "^6.0.0",
+    "inputmask": "^5.0.8",
+    "swiper": "^11.0.5"
   },
   "main": "svelte.config.js",
   "author": "",
