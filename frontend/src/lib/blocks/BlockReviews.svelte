@@ -61,35 +61,45 @@
 
     import Swiper from "swiper"
 
-
-
-    onMount(() => {
-
-
-            const swiper = new Swiper("#slider_container", {
-                slidesPerView: 1.3,
-                spaceBetween: 10,
-                loop: true,
-                breakpoints: {
-                    992: {
-                       slidesPerView: 2.5,
-                       spaceBetween: 20,
-                    }
-                }
-            });
- 
-
-        console.log(slider_container.children);
-    })
-
-
-
     
 
+    function slider(node) {
+        
+
+        const swiper = new Swiper(node, {
+            slidesPerView: 1.3,
+            spaceBetween: 10,
+            loop: true,
+            breakpoints: {
+                992: {
+                    slidesPerView: 2.5,
+                    spaceBetween: 20,
+                }
+            },
+            // It doesn't work, I don't know why
+
+            // autoplay: {
+            //     delay: 1000,
+            //     disableOnInteraction: false,
+            // },
+        });
+
+        
+        // Alternative way
+        function setInt() {
+            return setInterval(() => swiper.slideNext(), 3000);
+        }
+
+        let int = setInt()
+
+        node.addEventListener("mouseenter", () => clearInterval(int))
+        node.addEventListener("mouseleave", () => int = setInt())
+    }
+    
 </script>
 
 
-<section flex="col" class="cir cir-tr mt-50 mb-100" id="reviews">
+<section flex="col" class="cir cir-tr mt-50 mb-100" id="reviews" >
     <div class="container" flex="col center">
         <h2 class="title" data-aos="fade-down">
             Чому варто довіритися
@@ -100,7 +110,8 @@
         </p>
 
 
-        <div class="swiper w-full mt-30"  id="slider_container" data-aos="fade-down" data-aos-delay="200">
+        <!-- svelte-ignore a11y-click-events-have-key-events -->
+        <div class="swiper w-full mt-30" use:slider>
             <div class="swiper-wrapper">
                 <!-- <div flex="30 m-md:col" class="mt-30 " > -->
 
@@ -111,6 +122,7 @@
                         <div
                             class="bg-#2d2d2d p-30 swiper-slide"
                             flex="20 col"
+                            
                         >
                             <div flex="20 ai-c">
                                 <img class="sq-50 round" src={userIcon} alt="">
