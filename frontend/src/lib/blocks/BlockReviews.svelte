@@ -105,9 +105,13 @@
             Чому варто довіритися
         </h2>
 
-        <p class="subtitle" text="up" data-aos="fade-down" data-aos-delay="100">
-            Відгуки задоволених клієнтів та практиків
-        </p>
+        <div class="rel w-full" flex="center">
+            <p class="subtitle" text="up" data-aos="fade-down" data-aos-delay="100">
+                Відгуки задоволених клієнтів та практиків
+            </p>
+
+            <a href="/reviews" class="abs right-0 bottom-0 c-$brand">Всі відгуки</a>
+        </div>
 
 
         <!-- svelte-ignore a11y-click-events-have-key-events -->

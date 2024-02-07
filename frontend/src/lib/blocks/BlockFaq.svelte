@@ -2,28 +2,122 @@
 	import Btn from '$lib/ui/Btn.svelte';
     const content = [
         {
-            question: "Lorem ipsum dolor sit ame?",
-            answer: "Lorem ipsum dolor sit , consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore"
+            question: "Чи є протипоказання для занять йогою?",
+            answer: /* html */`
+                <p>
+                    Для того щоб займатися йогою – тобі не потрібно бути гнучкою людиною, або спортсменом. Йогою може займатися абсолютно кожен, незалежно від віку та ступеню підготовки
+                </p>
+            `
         },
         {
-            question: "Lorem ipsum dolor sit ame?",
-            answer: "Lorem ipsum dolor sit amet, consectetur  elit, sed eiusmod tempor incidunt ut labore et dolore"
+            question: "Що я отримаю від цих практик і для чого це мені?",
+            answer: /* html */`
+                <p>Позбудешся тривоги та стресу</p>
+                <br>
+                <ul>
+                    <li>Перепрограмуєш власні думки, установки та ствердження</li>
+                    <li>Відчуєш своє тіло</li>
+                    <li>Навчишся жити тут і зараз</li>
+                    <li>Отримаєш внутрішню цілісність та свободу</li>
+                    <li>Відчуєш якісні зміни в думках та тілі</li>
+                    <li>Вилікуєш десятки хвороб</li>
+                    <li>Зміниш свої харчові звички</li>
+                    <li>Отримаєш нових друзів та якісну спільноту вмотивованих людей</li>
+                    <li>Позбудешся станів депресії та апатії</li>
+                    <li>Віднайдеш свої істинні цілі</li>    
+                </ul>
+            `
         },
         {
-            question: "Lorem ipsum dolor sit ame?",
-            answer: "Lorem ipsum dolor sit amet, consectetur adipisci elit, sed  tempor incidunt ut labore et dolore"
+            question: "Чи можу я травмуватися по ваших уроках?",
+            answer: /* html */`
+                <p>
+                    Розказати про закачку!
+                    – Ні. практики Йоги базуються на трьох постулатах: безпечність, ефективність та простота. Ми отримуємо стан який по цінності можна порівняти з діамантом завдяки простому, проте комплексному підходу у роботі з тілом
+
+                    Ми не виконуємо занадто складних асан, не стоїмо в стійках на голові, не робимо “собаку мордою вгору” та навіть не крутимо лотос.
+
+                    Тільки комплексна робота з ювелірною послідовністю базових асан у звʼязці з концентрацією на диханні гарантує людині, систематичний і стрімкий результат, налаштування усіх тілесних процесів та виходу на більш високі рівні світосприйнят
+
+
+
+                </p>
+            `
         },
         {
-            question: "Lorem ipsum dolor sit ame?",
-            answer: "Lorem ipsum  sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore"
+            question: "Чим FYSM як методологія відрізняється від інших напрямків у Йозі?",
+            answer: /* html */`
+                <p>
+                    *Швидкі результати поперше вказати
+                    –FYSM враховує особливості, цілі та стан будь-якого практика за рахунок багатогранності комбінаційних алгоритмів та тренувального процесу. Методологія заснована на 15-ти річному досвіді особистої практики і тренерського досвіду вчителя. Алгоритми та комбінації були перевірені більше ніж на 100+ тисячах людях
+                    <br><br>
+                    Завдяки системі - практик отримує космічні результати в короткі терміни. 
+                    Навіть якщо людина виконує не на всі 100%, або не зовсім геометрично правильно, вона неодмінно отримає позитивний результат.
+                    Методологія працює за принципом Парето 20% зусиль та 80% результату.
+                </p>
+            `
         },
         {
-            question: "Lorem ipsum dolor sit ame?",
-            answer: "Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod  incidunt ut labore et dolore"
+            question: "Якщо я зовсім недосвідчений новачок, то я можу спробувати?",
+            answer: /* html */`
+                <p>
+                    Є два варіанти - ти або підсів, або ще не спробував…
+                    <br><br>
+                    –Методологію FYSM може використовувати кожен, незалежно від часу, простору та обставин, клімату, віросповідань, віку та будови тіла. Навіть якщо практик виконує асани з неточністю і без особливої техніки, то він не отримає фізичну або психічну травму, яку часто отримують шляхом “інтуїтивного” або “класичного” методу. 
+                    Якщо коротко - то ФІСМ можна рекомендувати навіть мамі та найріднішим людям не переймаючись за кінцевий результат
+
+                </p>
+            `
         },
+        {
+            question: "Як швидко я отримаю результат?",
+            answer: /* html */`
+                <p>
+                    –Швидко це - повільно та регулярно. Шлях кожного починається з сумнівів та внутрішніх заперечень..
+                    В йогу не приходять від “прекрасного життя” Якщо ви втомились активно шукати вихід, інструменти досягнення успіху, стояти на місці, набивати власні “шишки” та вас повністю не влаштовує ваше життя і світ навколо вас, проте всередині ще не згас внутрішній вогонь, надія і Віра що може бути по-іншому - то
+                    Вам доведеться довіритися процесу, здатися і почати діяти
+                    Ви не просто купуєте платформу, ви отримуєте інструмент, провідника та поле для швидких та якісних змін. 
+                </p>
+            `
+        },
+        {
+            question: "спортзал, качалка, стретчинг і Йога, в чому різниця?",
+            answer: /* html */`
+                <p>
+                    Є дві крайності: тільки качатися в тренажерках та тільки розтягуватися
+                    Перше призводить до гіпертонусу в мʼязах, втраті мобільності, перевантажені кровоносній та дихальній систем. Якщо ви приймаєте якісь “бади” чи “добавки” то у вас будуть проблеми з нирками, підшлунковою залозою, печінкою, статевими залозами та репропродуктивними функціями. 
+                    <br><br>
+                    У випадку з розтяжкою у вас страждають суглоби, випадають плечі, тазостегнові суглоби, травмуються мʼязи, звʼязки та сухожилля
+                    Що призводить тіло в баланс? Система тренувань на закачку та компенсацію мʼязового корсету та опорно-рухового апарату
+                    <br><br>
+                    Стабілізація та балансування потоків енергії у тілі при цьому маючи лише килимок та простір 2х2 метри. 
+                </p>
+            `
+        },
+        {
+            question: "Як працює Йога?",
+            answer: /* html */`
+                <p>
+                    Йога це найвища, цілісна система про усі аспекти життя та світобудову людини. Йога дає шанс взяти під контроль своє тіло, емоції та розум. 
+                    Йога викорінює коливання хаотичного розуму
+                    Крім здорової спини, прекрасного самопочуття, чистої свідомості та цілісності, людина отримує внутрішній стержень, впевненість та бачення чогось більшого ніж власне Я. 
+                    <br><br>
+                    В період занепаду та приспанної чистоти свідомості Йога - єдине що має сенс
+                    <br><br>
+                    – Йога це магічна технологія самопізнання і розкриття власних особливостей. Хоч цей шлях тяжкий та небезпечний, нехай Йога відкриє свої двері тому, хто старанно слідує її принципам, активно практикує незалежно від віку та обставин
+                    © Ігорь К.
+                </p>
+            `
+        },
+        
     ]
 
+   
+    
+
     function createAccordeon(node) {
+        const wrapper = document.querySelector(".answer_wrapper")
+
         const find = (el, sel) => el.querySelector(sel)
         let list = node.children
         
@@ -43,20 +137,23 @@
                 }
 
                 content.style.maxHeight = elem.classList.toggle("active") ? height : 0
+                
             })
 
             title.addEventListener("mouseenter", function() {
                 if (innerWidth < 768) return
 
                 const answer = document.querySelector(".answer_content") 
-                answer.innerText = content.innerText
+                answer.innerHTML = content.innerHTML
+                wrapper.classList.add("active")
             })
 
             title.addEventListener("mouseleave", function() {
                 if (innerWidth < 768) return
 
                 const answer = document.querySelector(".answer_content") 
-                answer.innerText = ""
+                answer.innerHTML = ""
+                wrapper.classList.remove("active")
             })
 
             content.style.maxHeight = "0px"
@@ -69,10 +166,10 @@
     <div class="container py-50" flex="50 col center">
         <h2 class="title" data-aos="fade-down">Виникли питання?</h2>
 
-        <div flex="50 ai-c m-md:col">
+        <div flex="50 m-md:col" class="answer_wrapper">
             <div
                 flex="col"
-                class="md:max-w-400"
+                class="md:w-50%"
                 use:createAccordeon
                 data-aos="fade-up" data-aos-delay="0"
             >
@@ -84,30 +181,34 @@
                             <img class="m-md:rotate-90" src="/icon/arrow.svg" alt="">
                         </div>
                         <div class="acc_cnt over-hidden" style="max-height: 0px">
-                            <p class="p-15">{answer}</p>
+                            <p class="p-15 op-60 fs-14">{@html answer}</p>
                         </div>
                     </div>
 
                 {/each}
             </div>
 
+            <div class="answer_content md:w-50% m-md:hide!" text="m-md:14"></div>
+
             <div
-                class="max-w-400 rel"
-                flex="20 col center" 
+                class="answer_bot md:rel md:w-50%"
                 data-aos="fade-up" 
                 data-aos-delay="100"
             >
 
-                <div class="answer_content"></div>
+                
 
-                <p text="20 bold center">
-                    У вас інше питання? Задайте його нашому боту
-                </p>
-                <p text="14 center">
-                    Перейдіть до нашого бота натисніть “Поставити питання” та напишіть що вас цікавить, в найближчий час ви отримаєте відповідь
-                </p>
-
-                <Btn text="@faqYoga" icon="/icon/tg.svg" cls="px-30" />
+                <div class="answer_bot md:abs m-md:max-w-400 m-auto h-full" flex="20 col center">
+                    <p text="20 bold center">
+                        У вас інше питання? Задайте його нашому боту
+                    </p>
+    
+                    <p text="14 center">
+                        Перейдіть до нашого бота натисніть “Поставити питання” та напишіть що вас цікавить, в найближчий час ви отримаєте відповідь
+                    </p>
+    
+                    <Btn text="@faqYoga" icon="/icon/tg.svg" cls="px-30" />
+                </div>
             </div>
         </div>
     </div>
@@ -115,24 +216,31 @@
 
 <style>
     .answer_content {
-        position: absolute;
+        /* position: absolute;
         top: 0;
         left: 0;
         width: 100%;
-        height: 100%;
-        background: #292929;
-        display: flex;
-        justify-content: center;
+        height: 100%; */
+        /* background: #292929; */
+        /* display: flex;
+        flex-direction: column;*/
+        /* justify-content: center; 
         align-items: center;
-        z-index: 1;
-        text-align: center;
-        padding: 30px
+        z-index: 1; */
+        /* text-align: center; */
+        /* padding: 30px */
     }
     .answer_content:empty {
         display: none;
     }
+    
+    .answer_wrapper:global(.active) .answer_bot {
+        display: none;
+    }
 
-    :global(.active) .acc_title img {
-        transform: rotate(180deg);
+    @media (max-width: 768px) {
+        :global(.active) .acc_title img {
+            transform: rotate(180deg);
+        }
     }
 </style>
