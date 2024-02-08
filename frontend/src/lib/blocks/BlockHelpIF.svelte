@@ -22,9 +22,9 @@
 
         <div grid="30 cols-2 md:cols-3 ai-s">
             {#each content as item, index}
-                <div class="max-w-300" flex="20 col center" data-aos="fade-up" data-aos-delay="{index * 100}">
-                    <img src="/icon/check.svg" alt="">
-                    <p text="16 400 center" class="op-50">{@html item}</p>
+                <div class="max-w-300" flex="20 col" data-aos="fade-up" data-aos-delay="{index * 100}">
+                    <img class="sq-40" src="/icon/check.svg" alt="">
+                    <p text="16 400" class="op-50">{@html item}</p>
                 </div>
             {/each}
         </div>
