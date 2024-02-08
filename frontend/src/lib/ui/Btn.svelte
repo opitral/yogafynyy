@@ -6,7 +6,7 @@
         cls = ""
 </script>
 
-<a href={href} class="btn {cls}">
+<a href={href} class="btn {cls}" target="_{href[0] == "#" ? "self" : "blank"}">
     {#if icon}
         <img src={icon} alt="">
     {/if}

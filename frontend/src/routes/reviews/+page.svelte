@@ -23,4 +23,20 @@
             </a>
         {/each}
     </div>
+
+{:else}
+    <div class="fixed sq-full flex-center">
+        <img id="loader" class="sq-50" src="logo-icon.svg" alt="">
+    </div>
 {/if}
+
+
+<style>
+    #loader {
+        animation: load 3s alternate infinite;    
+    }
+
+    @keyframes load {
+        to { scale: 1.5 }
+    }
+</style>

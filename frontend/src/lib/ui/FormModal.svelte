@@ -84,7 +84,7 @@
             on:submit|preventDefault={submitForm}
         >
             <div class="close">
-                <button class="bg-tp pointer" text="24" on:click={()=>history.back()}>✕</button>
+                <button type="button" class="bg-tp pointer" text="24" on:click={()=>history.back()}>✕</button>
             </div>
 
             <p text="20 bold" class="w-95%">
@@ -151,6 +151,7 @@
         justify-content: center;
         align-items: center;
         padding: 20px;
+        z-index: 999;
     }
 
     .close {

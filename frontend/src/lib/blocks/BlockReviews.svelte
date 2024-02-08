@@ -94,6 +94,7 @@
 
         node.addEventListener("mouseenter", () => clearInterval(int))
         node.addEventListener("mouseleave", () => int = setInt())
+        node.addEventListener("touchstart", () => clearInterval(int))
     }
     
 </script>
@@ -105,12 +106,14 @@
             Чому варто довіритися
         </h2>
 
-        <div class="rel w-full" flex="center">
+        <div class="rel w-full" flex="center m-md:col m-md:15">
             <p class="subtitle" text="up" data-aos="fade-down" data-aos-delay="100">
                 Відгуки задоволених клієнтів та практиків
             </p>
 
-            <a href="/reviews" class="abs right-0 bottom-0 c-$brand">Всі відгуки</a>
+            <a href="/reviews" class="m-md:hide abs right-0 bottom-0 c-$brand">
+                Всі відгуки
+            </a>
         </div>
 
 
@@ -128,7 +131,7 @@
                             flex="20 col"
                             
                         >
-                            <div flex="20 ai-c">
+                            <div flex="20 ai-c m-md:col">
                                 <img class="sq-50 round" src={userIcon} alt="">
                                 <p text="10 md:14 bold up">{userName}</p>
                             </div>
@@ -147,9 +150,14 @@
                     
                 {/each}
             </div>
-                
+
+            
             <!-- </div> -->
         </div>
+
+        <a href="/reviews" class="mt-30 text-center c-$brand md:hide">
+            Всі відгуки
+        </a>
     </div>
 </section>
 

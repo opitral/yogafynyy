@@ -34,10 +34,12 @@
             Для кого підходить платформа
         </h2>
 
-        <p text="500" class="op-50">ДЛЯ УСІХ В КОГО Є ХРЕБЕТ</p>
+        <p text="500 center" class="op-50 w-full">
+            ДЛЯ УСІХ В КОГО Є ХРЕБЕТ
+        </p>
 
         <div flex="12 col center" class=" m-md:w-full">
-            <p text="18 up *:center" flex="15 col">
+            <p text="14 md:18 up *:center" flex="15 col">
                 <span>ІДЕАЛЬНИЙ СТАРТ ДЛЯ НОВАЧКІВ ЯКІ ШУКАЮТЬ З ЧОГО ПОЧАТИ СВІЙ ШЛЯХ В ЙОГУ</span>
                 <span>ПОГЛИБЛЕННЯ У НОВЕ ТА РОЗШИРЕННЯ БАЗИ ЗНАНЬ</span>
                 <span>ДЛЯ ДОСВІДЧЕНИХ ПРАКТИКІВ</span>
@@ -62,7 +64,7 @@
             {/each} -->
         </div>
 
-        <div data-aos="fade-down">
+        <div data-aos="fade-down" class="m-md:flex-center m-md:w-full">
             <Btn />
         </div>
     </div>

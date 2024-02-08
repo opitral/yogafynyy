@@ -1,44 +1,48 @@
 const stringToHTML = function (str) {
-	var dom = document.createElement('div');
-	dom.innerHTML = str;
-	return [...dom.children];
+    return new DOMParser()
+        .parseFromString(str, 'text/html')
+        .body
+        .children
 };
 
-export default function(node, params = {}){
-    node.addEventListener("click", function(e){
+
+
+export default function(node, params = {}) {
+    node.addEventListener('click', function (e) {
         e.preventDefault();
 
-        document.body.style.overflow = 'hidden'
+        document.body.style.overflow = 'hidden';
 
-        let count = Math.round(Math.random() * 100);
+        let id = `prev${Math.round(Math.random() * 100)}`;
 
-        let html = /*html*/`
+        let html = stringToHTML(/* html */`
             <div
-                class="fullscreen fixed preview flex-center"
-                id="prev${count}"
+                class="fullscreen fixed flex-center flex-col gap-30 z-999"
+                id="${id}"
                 style="
-                    box-shadow: inset 0 0 0 9999px rgba(0,0,0,.5);
+                    box-shadow: inset 0 0 0 9999px rgba(0,0,0,.8);
                 "
             >
-                <button
-                    class="close abs top-20 right-20 bg-tp fs-24 pointer"
-                    onclick="
-                        document.querySelector('#prev${count}').remove(),
-                        document.body.style.overflow = ''
-                    "
-                >✕</button>
-                
                 <img
-                    class="h-80% w-80% fit-contain ${params.class}"
+                    class="w-80% fit-contain ${params.class}"
                     src="${params.src || node.src}"
                     alt="${params.alt}"
                 />
+
+                <button
+                    class="bg-$brand c-black sq-40 round fs-24 pointer flex-center bold"
+                >✕</button>
             </div>
-        `
+        `);
 
-        const preview = stringToHTML(html);
-        
-        document.body.append(...preview)
+        document.body.append(...html);
 
-    })
+        const wrapper = document.querySelector(`#${id}`)
+        const btn = document.querySelector(`#${id} button`)
+
+        btn.addEventListener("click", () => {
+            wrapper.remove()
+            document.body.style.overflow = ''
+        })
+    });
 }
