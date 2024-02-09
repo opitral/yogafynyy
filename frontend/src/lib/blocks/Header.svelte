@@ -18,7 +18,7 @@
 
             <!-- <h4 text="$brand">LogoYoga</h4> -->
 
-            <img class="h-60" src="/logo.svg" alt="logo">
+            <img class="h-40 md:h-60" src="/logo.svg" alt="YOGA HATA">
 
             <nav class="m-md:hide" flex="50">
                 {#each links as {href, text}}

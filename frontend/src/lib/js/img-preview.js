@@ -24,7 +24,7 @@ export default function(node, params = {}) {
                 "
             >
                 <img
-                    class="w-80% fit-contain ${params.class}"
+                    class="m-md:w-80% md:h-70% fit-contain ${params.class}"
                     src="${params.src || node.src}"
                     alt="${params.alt}"
                 />

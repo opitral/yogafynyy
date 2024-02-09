@@ -29,8 +29,8 @@
             <img class="md:w-40%" src="/img/video.png" alt="" data-aos="fade-right">
 
             <div class="" flex="30 col">
-                <h5 data-aos="fade-up" data-aos-delay="100">Обретите здоровое и гибкое тело на всю жизнь</h5>
-                <p text="18" data-aos="fade-up">Цей курс для вас, якщо:</p>
+                <!-- <h5 data-aos="fade-up" data-aos-delay="100">Обретите здоровое и гибкое тело на всю жизнь</h5>
+                <p text="18" data-aos="fade-up">Цей курс для вас, якщо:</p> -->
 
                 <ul>
                     {#each list as item, index}

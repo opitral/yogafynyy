@@ -8,44 +8,53 @@
 
         <div flex="10 col m-md:center">
             <h3 class="">
-                <a href="/#top">Yoga Rutm</a>
+                <a href="/#top">
+                
+                    <img class="h-30" src="/logo-line.svg" alt="YOGA HATA">
+                        
+                
+                </a>
             </h3>
 
             <div class="social gap-20">
-                <a href="#/" target="_blank">
+                <a href="https://www.instagram.com/faynyys" target="_blank">
                     {@html icons.inst}
                 </a>
-                <a href="#/" target="_blank">
+                <!-- <a href="#/" target="_blank">
                     {@html icons.yt}
-                </a>
-                <a href="#/" target="_blank">
+                </a> -->
+                <a href="https://t.me/yoga_help" target="_blank">
                     {@html icons.tg}
                 </a>
             </div>
         </div>
 
         <div flex="20 col center">
-            <a href="tel:0981234567" target="_blank">
-                +38 (098) 12 - 34 - 567
+            <a text="h:$brand" href="tel:+380637950650">
+                +38 (063) 795-06-50
             </a>
-            <a href="https://maps.google.com" target="_blank">
+            <!-- <a href="https://maps.google.com" target="_blank">
                 м. Київ, вул. Шевченка, 1
+            </a> -->
+            <a text="h:$brand" href="mailto:faynyyyoga@gmail.com" target="_blank">
+                faynyyyoga@gmail.com
             </a>
-            <a href="mailto:lorem-ipsum-dolor@gmail.com" target="_blank">
-                lorem-ipsum-dolor@gmail.com
+
+            <a text="h:$brand" href="/policy" target="_blank">
+                Договір оферти
             </a>
         </div>
 
         <div flex="10 col ai-c md:ai-e" class="op-50">
-            <p>ФОП Файний Серж Батькович</p>
-            <p>ІНН 2199115250</p>
+            <p>ФОП Москалець Сергій Романович</p>
+            <p>ІПН 3569803798</p>
         </div>
 
     </div>
 </footer>
 
 <div class="bg-$brand80 p-10" flex="center" text="14 $black">
-    Copyright © { new Date().getFullYear() } Yoga Rutm
+    Copyright © { new Date().getFullYear() } YOGA HATA
 </div>
 
 <style>

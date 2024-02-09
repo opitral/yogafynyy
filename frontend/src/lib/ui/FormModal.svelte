@@ -102,7 +102,7 @@
                 Ціна курсу {new_price} грн
                 <span text="14 gray delete">{price} грн</span>
             </p>
-            <p text="20 bold">Вкажіть свої данні</p>
+            <p text="20 bold">Вкажіть свої дані</p>
 
             <input
                 required
