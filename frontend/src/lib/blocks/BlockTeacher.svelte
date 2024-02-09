@@ -72,7 +72,7 @@
 <style>
     .diploms img {
         height: 100%;
-        opacity: .3;
+        opacity: .6;
         cursor: pointer;
         transition: all .3s ;
     }

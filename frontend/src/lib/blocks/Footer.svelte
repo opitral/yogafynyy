@@ -41,6 +41,10 @@
             </a>
 
             <a text="h:$brand" href="/policy" target="_blank">
+                Політика конфіденційності
+            </a>
+
+            <a text="h:$brand" href="/offer" target="_blank">
                 Договір оферти
             </a>
         </div>

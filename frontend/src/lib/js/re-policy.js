@@ -1,0 +1,1 @@
+/ id=".+?"| class=".+?"|<style.+?>.+?</style>|<span.+?>|</span>/gs
