@@ -57,11 +57,11 @@
         </div>
 
         <div flex="20 col center" class="mt-50">
-            <p text="18 center" class="max-w-450" data-aos="fade-up">
+            <!-- <p text="18 center" class="max-w-450" data-aos="fade-up">
                 Просто спробуй
-            </p>
+            </p> -->
             <div data-aos="fade-up" data-aos-delay="100">
-                <Btn />
+                <Btn text="Просто спробуй" />
             </div>
         </div>
     </div>
