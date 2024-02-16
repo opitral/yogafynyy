@@ -242,7 +242,7 @@
                         Перейдіть до нашого бота натисніть “Поставити питання” та напишіть що вас цікавить, в найближчий час ви отримаєте відповідь
                     </p>
     
-                    <Btn text="@yoga_help" href="https://t.me/yoga_help" icon="/icon/tg.svg" cls="px-30" />
+                    <Btn text="@yogahelpua" href="https://t.me/yogahelpua" icon="/icon/tg.svg" cls="px-30" />
                 </div>
             </div>
         </div>

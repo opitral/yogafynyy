@@ -30,8 +30,8 @@
         </div>
 
         <div flex="20 col center">
-            <a text="h:$brand" href="tel:+380637950650">
-                +38 (063) 795-06-50
+            <a text="h:$brand" href="tel:+380936990019">
+                +38 (093) 699-00-19
             </a>
             <!-- <a href="https://maps.google.com" target="_blank">
                 м. Київ, вул. Шевченка, 1
