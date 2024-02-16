@@ -1,7 +1,7 @@
 
 /** @type {import('blickcss').config} */
 export default (b) => ({
-    input: './src/**/*.{svelte,html}', // Your input files by glob pattern
+    input: './src/**/*.{svelte,html,js}', // Your input files by glob pattern
     output: './static/output.css', // File in which css will be generated
 
     // your configurations
