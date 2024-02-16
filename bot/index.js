@@ -181,52 +181,52 @@ bot.hears(
 bot.hears("чат однодумців", async (ctx) => {
   try {
     const response = await axios.post(
-      `${process.env.SERVER_BASE_LINK}/checkUser`,
-      {
-        user: ctx.message.chat.id,
-        token: "",
-      },
-      { validateStatus: () => true }
+        `${process.env.SERVER_BASE_LINK}/checkUser`,
+        {
+          user: ctx.message.chat.id,
+          token: "",
+        },
+        { validateStatus: () => true }
     );
 
     if (response.data.error) {
       const lending = await axios.get(
-        `${process.env.SERVER_BASE_LINK}/getLink/lending`,
-        { validateStatus: () => true }
+          `${process.env.SERVER_BASE_LINK}/getLink/lending`,
+          { validateStatus: () => true }
       );
 
       return await ctx.reply(
-        "у вас немає доступу до начальної платформи. придбайте доступ на сайті",
-        Markup.inlineKeyboard([
-          [Markup.button.url("ПЕРЕЙТИ", lending.data.message)],
-        ])
+          "у вас немає доступу до начальної платформи. придбайте доступ на сайті",
+          Markup.inlineKeyboard([
+            [Markup.button.url("ПЕРЕЙТИ", lending.data.message)],
+          ])
       );
     } else {
       const response = await axios.post(
-        `${process.env.SERVER_BASE_LINK}/getLink/chat`,
-        {
-          user: ctx.message.chat.id,
-        },
-        { validateStatus: () => true }
+          `${process.env.SERVER_BASE_LINK}/getLink/chat`,
+          {
+            user: ctx.message.chat.id,
+          },
+          { validateStatus: () => true }
       );
 
       if (response.data.error) {
         await ctx.reply(
-          "виникла помилка, спробуй ще раз. не виходить - значить наша команда уже працює над якнайшвидшим розвʼязанням проблеми"
+            "виникла помилка, спробуй ще раз. не виходить - значить наша команда уже працює над якнайшвидшим розвʼязанням проблеми"
         );
       } else {
         return await ctx.reply(
-          "твоя спільнота однодумців. приєднуйся!",
-          Markup.inlineKeyboard([
-            [Markup.button.url("ПРИЄДНАТИСЯ", response.data.message)],
-          ])
+            "твоя спільнота однодумців. приєднуйся!",
+            Markup.inlineKeyboard([
+              [Markup.button.url("ПРИЄДНАТИСЯ", response.data.message)],
+            ])
         );
       }
     }
   } catch (error) {
     console.log(error);
     await ctx.reply(
-      "виникла помилка, спробуй ще раз. не виходить - значить наша команда уже працює над якнайшвидшим розвʼязанням проблеми"
+        "виникла помилка, спробуй ще раз. не виходить - значить наша команда уже працює над якнайшвидшим розвʼязанням проблеми"
     );
   }
 });

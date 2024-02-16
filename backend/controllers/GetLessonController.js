@@ -2,7 +2,7 @@ import { validationResult } from "express-validator";
 import dotenv from "dotenv";
 
 import UserModel from "../models/UserModel.js";
-import VideoModel from "../models/VideoModel.js";
+import LessonModel from "../models/LessonModel.js";
 
 dotenv.config();
 
@@ -19,7 +19,7 @@ class GetLessonController {
 
       const user = await UserModel.findOne({ _id: req.user });
 
-      const videos = await VideoModel.find({
+      const videos = await LessonModel.find({
         _id: { $ne: user.lastGetVideo[req.body.category].video?.toString() },
         category: req.body.category,
         mood: req.body.mood,
@@ -41,10 +41,14 @@ class GetLessonController {
 
       return res.json({
         message: {
-          file_id: randomVideo.fileId,
+          files: {
+            high: randomVideo.files.high,
+            low: randomVideo.files.low,
+          },
           caption: randomVideo.caption,
           category: randomVideo.category,
           mood: randomVideo.mood,
+
         },
       });
     } catch (error) {
