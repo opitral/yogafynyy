@@ -7,7 +7,7 @@ import UserModel from "../backend/models/UserModel.js";
 import PaymentModel from "../backend/models/PaymentModel.js";
 import LessonModel from "../backend/models/LessonModel.js";
 
-dotenv.config({path: __dirname + '../backend/.env'});
+dotenv.config();
 
 const bot = new Telegraf(process.env.TELEGRAM_BOT_TOKEN);
 
