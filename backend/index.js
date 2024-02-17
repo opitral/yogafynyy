@@ -1,13 +1,9 @@
 import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
-
-import CourseRouter from "./routers/CourseRouter.js";
-import GetLessonRouter from "./routers/GetLessonRouter.js";
-import GetLinkRouter from "./routers/GetLinkRouter.js";
-import CheckUserRouter from "./routers/CheckUserRouter.js";
-
 import db from "./db.js";
+
+import CoursesRouter from "./routers/CoursesRouter.js";
 
 dotenv.config();
 
@@ -17,10 +13,7 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-app.use("/api/v1/course", CourseRouter); // курс
-app.use("/api/v1/getLesson", GetLessonRouter); // уроки
-app.use("/api/v1/getLink", GetLinkRouter); // посилання
-app.use("/api/v1/checkUser", CheckUserRouter); // перевірка користувача
+app.use("/api/v1/courses", CoursesRouter);
 
 app.listen(process.env.SERVER_PORT, (error) => {
   if (error) {

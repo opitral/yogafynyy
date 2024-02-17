@@ -3,9 +3,7 @@ import dotenv from "dotenv";
 
 dotenv.config();
 
-mongoose.connect(
-  `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWORD}@cluster.0eptxwt.mongodb.net/${process.env.DB_NAME}?retryWrites=true&w=majority`
-);
+mongoose.connect(`mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWORD}@cluster.0eptxwt.mongodb.net/${process.env.DB_NAME}?retryWrites=true&w=majority`);
 
 const db = mongoose.connection;
 
