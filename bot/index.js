@@ -229,6 +229,7 @@ bot.action(/^lesson_(.+)/, async (ctx) => {
             _id: { $ne: user.lastContent[data[0]].lesson?.toString() },
             category: data[0],
             mood: data[1],
+            disable: false
         });
 
         if (!lessons.length) {
@@ -248,8 +249,8 @@ bot.action(/^lesson_(.+)/, async (ctx) => {
         if (randomLesson.type === "media") {
             if (randomLesson.files.low) {
                 await ctx.reply("оберіть якість відео", Markup.inlineKeyboard([
-                    [Markup.button.callback("високе", `quality_${randomLesson._id}_high`)],
-                    [Markup.button.callback("низьке", `quality_${randomLesson._id}_low`)]
+                    [Markup.button.callback("HD", `quality_${randomLesson._id}_high`)],
+                    [Markup.button.callback("мобільна", `quality_${randomLesson._id}_low`)]
                 ]))
 
             } else {

@@ -26,6 +26,11 @@ const LessonSchema = new mongoose.Schema(
       type: {
           type: String,
           required: true,
+      },
+      disable: {
+        type: Boolean,
+          required: true,
+          default: false
       }
   },
   {
