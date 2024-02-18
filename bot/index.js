@@ -217,8 +217,8 @@ bot.action(/^lesson_(.+)/, async (ctx) => {
         const randomLesson = lessons[randomLessonIndex];
 
         if (randomLesson.category !== "meditation") {
+            const lastContent = new Date(user.lastContent[data[0]].datetime);
             if (user.lastContent[data[0]].count >= 2) {
-                const lastContent = new Date(user.lastContent[data[0]].datetime);
                 const nextDay = new Date(lastContent);
                 nextDay.setDate(lastContent.getDate() + 1);
                 nextDay.setHours(0, 0, 0, 0);
