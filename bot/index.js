@@ -200,31 +200,6 @@ bot.action(/^lesson_(.+)/, async (ctx) => {
 
         const user = await UserModel.findOne({telegram: ctx.update.callback_query.message.chat.id})
 
-        // if (!user.lastContent[data[0]].datetime) {
-        //     return next();
-        // }
-
-        const lastContent = new Date(user.lastContent[data[0]].datetime);
-
-        if (user.lastContent[data[0]].count >= 2) {
-            const nextDay = new Date(lastContent);
-            nextDay.setDate(lastContent.getDate() + 1);
-            nextDay.setHours(0, 0, 0, 0);
-
-            if (new Date().getTime() > nextDay.getTime()) {
-                user.lastContent[data[0]].count = 0;
-                await user.save();
-            }
-
-            return await ctx.answerCbQuery("Ви не можете отримати більше двох практик на одну добу");
-        }
-
-        lastContent.setHours(lastContent.getHours() + 2);
-
-        if (lastContent > Date.now()) {
-            return await ctx.answerCbQuery("Має пройти мінімум 2 години між отриманням практик")
-        }
-
         const lessons = await LessonModel.find({
             _id: { $ne: user.lastContent[data[0]].lesson?.toString() },
             category: data[0],
@@ -241,6 +216,28 @@ bot.action(/^lesson_(.+)/, async (ctx) => {
         const randomLessonIndex = Math.floor(Math.random() * lessons.length);
         const randomLesson = lessons[randomLessonIndex];
 
+        if (randomLesson.category !== "meditation") {
+            if (user.lastContent[data[0]].count >= 2) {
+                const lastContent = new Date(user.lastContent[data[0]].datetime);
+                const nextDay = new Date(lastContent);
+                nextDay.setDate(lastContent.getDate() + 1);
+                nextDay.setHours(0, 0, 0, 0);
+
+                if (new Date().getTime() > nextDay.getTime()) {
+                    user.lastContent[data[0]].count = 0;
+                    await user.save();
+                }
+
+                return await ctx.answerCbQuery("Ви не можете отримати більше двох практик на одну добу");
+            }
+
+            lastContent.setHours(lastContent.getHours() + 2);
+
+            if (lastContent > Date.now()) {
+                return await ctx.answerCbQuery("Має пройти мінімум 2 години між отриманням практик")
+            }
+        }
+
         user.lastContent[data[0]].lesson = randomLesson._id;
         user.lastContent[data[0]].datetime = Date.now();
         user.lastContent[data[0]].count += 1;
@@ -254,7 +251,7 @@ bot.action(/^lesson_(.+)/, async (ctx) => {
                 ]))
 
             } else {
-                const lessonMessage = await ctx.replyWithVideo(
+                const lessonMessage = await ctx.replyWithAudio(
                     randomLesson.files.high,
                     {
                         caption: `${randomLesson.caption}\n\nбільше про йогу, харчування та здорове гнучке тіло в інстаграмі майстра: <a href="${process.env.INSTAGRAM_LINK}">Серж Файний</a>`,
