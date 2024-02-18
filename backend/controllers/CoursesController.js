@@ -108,7 +108,7 @@ class CoursesController {
                 order_desc: "Одноразова оплата курсу",
                 currency: "UAH",
                 amount: course.price * ((100 - course.discount) / 100),
-                response_url: `${process.env.BASE_URL}/api/v1/courses/${course._id}/confirm`,
+                response_url: `${process.env.BASE_URL}/api/v1/courses/confirm`,
             });
 
             return res.json({
@@ -125,14 +125,14 @@ class CoursesController {
 
     async confirmPayment(req, res){
         try {
-            const token = nanoid(6);
+            const key = nanoid(6);
 
             const payment = await PaymentModel.findOneAndUpdate(
                 { token: req.body.order_id },
                 {
                     $set: {
                         payed: true,
-                        key: token
+                        key: key
                     },
                 }
             );
@@ -152,11 +152,11 @@ class CoursesController {
                 },
                 to: user.email,
                 subject: "Дякуємо за придбання курсу",
-                html: getEmailHtml(token),
+                html: getEmailHtml(key),
             });
 
             return res.json({
-                message: `${process.env.TELEGRAM_BOT_LINK}?start=${token}`,
+                message: `${process.env.TELEGRAM_BOT_LINK}?start=${key}`,
             });
 
         } catch (error) {

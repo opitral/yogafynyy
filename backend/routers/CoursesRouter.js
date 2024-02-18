@@ -7,6 +7,6 @@ const router = new Router();
 router.get("/", CoursesController.getCourses);
 router.get("/:courseId", CoursesController.getCourse); // придбати курс
 router.post("/:courseId/buy", BuyCourseValidation, CoursesController.buyCourse); // підтвердження придбання
-router.post("/:courseId/confirm", CoursesController.confirmPayment);
+router.post("/confirm", CoursesController.confirmPayment);
 
 export default router;
