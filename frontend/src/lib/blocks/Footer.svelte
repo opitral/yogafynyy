@@ -23,7 +23,7 @@
                 <!-- <a href="#/" target="_blank">
                     {@html icons.yt}
                 </a> -->
-                <a href="https://t.me/yoga_help" target="_blank">
+                <a href="https://t.me/yogahelpua" target="_blank">
                     {@html icons.tg}
                 </a>
             </div>
@@ -49,7 +49,7 @@
             </a>
         </div>
 
-        <div flex="10 col ai-c md:ai-e" class="op-50">
+        <div flex="10 col ai-c md:ai-e" class="op-50" text="14">
             <p>ФОП Москалець Сергій Романович</p>
             <p>ІПН 3569803798</p>
         </div>
