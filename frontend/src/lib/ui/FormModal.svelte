@@ -6,7 +6,9 @@
     import { alertError } from '$lib/js/tst-variants.js';
     import { api        } from '$lib/js/api.js';
 
-    export let price = 0, discount = 0, new_price = 0;
+    export let price = 0, discount = 0, _id ;
+
+    let new_price = price - (price / 100 * discount);
 
     price /= 100;
     new_price /= 100;
@@ -46,7 +48,9 @@
 
         disabled = true;
 
-        const { data, error } = await api.post.json('course/buy', {
+
+
+        const { data, error } = await api.post.json(`courses/${_id}/buy`, {
             body: {
                 email: $store.email,
                 phone: mask_phone.unmaskedvalue(),

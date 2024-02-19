@@ -7,7 +7,7 @@
 
     form ||= {}
 
-    const support = "https://t.me/yoga-support"
+    const support = "https://t.me/yogahelpua"
 
     const statusContent = {
         success : {

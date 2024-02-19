@@ -24,7 +24,9 @@
 
     onMount(async () => {
         AOS.init();
-        if (data.error) alertError.show(data.message)
+        if (data.error) {
+            alertError.show(data.message)
+        }
     })
 </script>
 
@@ -45,5 +47,5 @@
 
 <Footer />
 
-<FormModal {...data}/>
-<Alert     {...data} />
+<FormModal {...data.data[0]}/>
+<Alert     {...data.data[0]} />
