@@ -200,24 +200,9 @@ bot.action(/^lesson_(.+)/, async (ctx) => {
 
         const user = await UserModel.findOne({telegram: ctx.update.callback_query.message.chat.id})
 
-        const lessons = await LessonModel.find({
-            _id: { $ne: user.lastContent[data[0]].lesson?.toString() },
-            category: data[0],
-            mood: data[1],
-            disable: false
-        });
-
-        if (!lessons.length) {
-            return await ctx.answerCbQuery("Практику не знайдено")
-        }
-
-        await ctx.deleteMessage(ctx.update.callback_query.message.message_id)
-
-        const randomLessonIndex = Math.floor(Math.random() * lessons.length);
-        const randomLesson = lessons[randomLessonIndex];
-
-        if (randomLesson.category !== "meditation") {
+        if (data[0] !== "meditation") {
             const lastContent = new Date(user.lastContent[data[0]].datetime);
+
             if (user.lastContent[data[0]].count >= 2) {
                 const nextDay = new Date(lastContent);
                 nextDay.setDate(lastContent.getDate() + 1);
@@ -238,6 +223,22 @@ bot.action(/^lesson_(.+)/, async (ctx) => {
             }
         }
 
+        const lessons = await LessonModel.find({
+            _id: { $ne: user.lastContent[data[0]].lesson?.toString() },
+            category: data[0],
+            mood: data[1],
+            disable: false
+        });
+
+        if (!lessons.length) {
+            return await ctx.answerCbQuery("Практику не знайдено")
+        }
+
+        await ctx.deleteMessage(ctx.update.callback_query.message.message_id)
+
+        const randomLessonIndex = Math.floor(Math.random() * lessons.length);
+        const randomLesson = lessons[randomLessonIndex];
+
         user.lastContent[data[0]].lesson = randomLesson._id;
         user.lastContent[data[0]].datetime = Date.now();
         user.lastContent[data[0]].count += 1;
@@ -251,7 +252,7 @@ bot.action(/^lesson_(.+)/, async (ctx) => {
                 ]))
 
             } else {
-                const lessonMessage = await ctx.replyWithAudio(
+                const lessonMessage = await ctx.replyWithVideo(
                     randomLesson.files.high,
                     {
                         caption: `${randomLesson.caption}\n\nбільше про йогу, харчування та здорове гнучке тіло в інстаграмі майстра: <a href="${process.env.INSTAGRAM_LINK}">Серж Файний</a>`,
