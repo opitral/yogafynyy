@@ -253,6 +253,7 @@ bot.action(/^lesson_(.+)/, async (ctx) => {
 
             } else {
                 const photoMassage = await ctx.replyWithPhoto(randomLesson.photo)
+                console.log(randomLesson)
                 const lessonMessage = await ctx.replyWithVideo(
                     randomLesson.files.high,
                     {
