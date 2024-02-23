@@ -20,7 +20,6 @@
   },
   "type": "module",
   "dependencies": {
-    "@splidejs/svelte-splide": "^0.2.9",
     "@types/swiper": "^6.0.0",
     "blickcss": "^2.1.3",
     "esbuild": "^0.20.1",
