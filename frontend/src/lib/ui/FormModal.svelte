@@ -1,14 +1,16 @@
 <script>
-    import { page       } from '$app/stores';
-    import { store      } from '$lib/store.js';
-    import { onMount    } from 'svelte';
-    import { fade, fly  } from 'svelte/transition';
+    import { page } from '$app/stores';
+    import { store } from '$lib/store.js';
+    import { onMount } from 'svelte';
+    import { fade, fly } from 'svelte/transition';
     import { alertError } from '$lib/js/tst-variants.js';
-    import { api        } from '$lib/js/api.js';
+    import { api } from '$lib/js/api.js';
 
-    export let price = 0, discount = 0, _id ;
+    export let price = 0,
+        discount = 0,
+        _id;
 
-    let new_price = price - (price / 100 * discount);
+    let new_price = price - (price / 100) * discount;
 
     price /= 100;
     new_price /= 100;
@@ -48,8 +50,6 @@
 
         disabled = true;
 
-
-
         const { data, error } = await api.post.json(`courses/${_id}/buy`, {
             body: {
                 email: $store.email,
@@ -84,6 +84,7 @@
             action="#"
             method="POST"
             flex="20 col ai-s"
+            class="max-w-600"
             transition:fly={fly_params}
             on:submit|preventDefault={submitForm}
         >
@@ -95,15 +96,16 @@
                     on:click={() => {
                         history.back();
                         // open = false
-                    }}>✕</button
-                >
+                    }}
+                >✕</button>
             </div>
 
             <p text="20 bold" class="w-95%">
-                Купіть курс прямо зараз та отримайте знижку {discount}%
+                <!-- Купіть курс прямо зараз та отримайте знижку {discount}% -->
+                Долучайся до платформи прямо зараз та отримай знижку {discount}%
             </p>
             <p text="18">
-                Ціна курсу {new_price} грн
+                Цінність курсу {new_price} грн
                 <span text="14 gray delete">{price} грн</span>
             </p>
             <p text="20 bold">Вкажіть свої дані</p>

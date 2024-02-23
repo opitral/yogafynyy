@@ -27,7 +27,7 @@
                 </div>
             </div>
 
-            <img class="w-80% md:w-1/3" src="/img/mockup.png" alt="" data-aos="zoom-in-left" data-aos-delay="400">
+            <img class="w-90% md:w-1/3" src="/img/platform.png" alt="" data-aos="zoom-in-left" data-aos-delay="400">
         </div>
     </div>
 </section>
