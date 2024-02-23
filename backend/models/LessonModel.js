@@ -15,6 +15,9 @@ const LessonSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
+      photo: {
+          type: String
+      },
     mood: {
       type: Number,
       required: true,

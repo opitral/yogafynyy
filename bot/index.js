@@ -252,6 +252,7 @@ bot.action(/^lesson_(.+)/, async (ctx) => {
                 ]))
 
             } else {
+                const photoMassage = await ctx.replyWithPhoto(randomLesson.photo)
                 const lessonMessage = await ctx.replyWithVideo(
                     randomLesson.files.high,
                     {
@@ -261,6 +262,7 @@ bot.action(/^lesson_(.+)/, async (ctx) => {
                     }
                 );
 
+                delMessage(ctx, photoMassage.message_id);
                 delMessage(ctx, lessonMessage.message_id);
             }
 
