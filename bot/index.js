@@ -52,10 +52,10 @@ schedule.scheduleJob("0 12 */2 * *", async () => {
 });
 
 bot.use(async (ctx, next) => {
-    const message = ctx.message ?? ctx.update.callback_query.message
+    const message = ctx.message ?? ctx.update.callback_query?.message
     console.log(message)
 
-    const user = await UserModel.findOne({telegram: message.chat.id})
+    const user = await UserModel.findOne({telegram: message.chat.id ?? ""})
 
     if (user) {
         return next()
@@ -329,4 +329,4 @@ bot.action(/^quality_(.+)/, async (ctx) => {
     }
 })
 
-// bot.launch()
+bot.launch()
