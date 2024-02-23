@@ -30,6 +30,27 @@ async function errorMessage(ctx, error) {
     );
 }
 
+async function sendNotification() {
+    try {
+        const users = await UserModel.find({});
+
+        for (const user of users) {
+            if (user.telegram) {
+                const messages = ["1", "2", "3", "4"]
+                const randomMessage = Math.floor(Math.random() * messages.length)
+
+                await bot.telegram.sendMessage(user.telegram, messages[randomMessage]);
+            }
+        }
+    } catch (error) {
+        console.error("Error sending notification:", error);
+    }
+}
+
+schedule.scheduleJob("0 12 */2 * *", async () => {
+    await sendNotification();
+});
+
 bot.use(async (ctx, next) => {
     const message = ctx.message ?? ctx.update.callback_query.message
     console.log(message)
@@ -252,8 +273,6 @@ bot.action(/^lesson_(.+)/, async (ctx) => {
                 ]))
 
             } else {
-                const photoMassage = await ctx.replyWithPhoto(randomLesson.photo)
-                console.log(randomLesson)
                 const lessonMessage = await ctx.replyWithVideo(
                     randomLesson.files.high,
                     {
@@ -263,11 +282,11 @@ bot.action(/^lesson_(.+)/, async (ctx) => {
                     }
                 );
 
-                delMessage(ctx, photoMassage.message_id);
                 delMessage(ctx, lessonMessage.message_id);
             }
 
         } else {
+            const photoMassage = await ctx.replyWithPhoto(randomLesson.photo)
             const lessonMessage = await ctx.replyWithAudio(
                 randomLesson.files.high,
                 {
@@ -277,6 +296,7 @@ bot.action(/^lesson_(.+)/, async (ctx) => {
                 }
             )
 
+            delMessage(ctx, photoMassage.message_id);
             delMessage(ctx, lessonMessage.message_id);
         }
 
@@ -309,4 +329,4 @@ bot.action(/^quality_(.+)/, async (ctx) => {
     }
 })
 
-// bot.launch()
+bot.launch()
