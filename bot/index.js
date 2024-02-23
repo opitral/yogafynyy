@@ -309,4 +309,4 @@ bot.action(/^quality_(.+)/, async (ctx) => {
     }
 })
 
-bot.launch()
+// bot.launch()
